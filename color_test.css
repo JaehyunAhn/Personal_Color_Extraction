@@ -1,4 +1,98 @@
 #SkinColorRange {
-    color: rgb(133,77,0); /* BRG to RGB */
+    color1: rgb(133,77,0); /* BRG to RGB */
     color2: rgb(255,173,127)
+}
+
+#Skins {
+    /* Level 1 */
+    level1A: rgb(245,212,205);
+    level1B: rgb(245,214,203);
+    level1C: rgb(240,214,201);
+    level1D: rgb(238,215,199);
+    level1E: rgb(237,216,197);
+    level1F: rgb(234,216,196);
+
+    /* Level 2 */
+    level2A: rgb(234,194,186);
+    level2B: rgb(233,195,182);
+    level2C: rgb(230,197,178);
+    level2D: rgb(229,198,177);
+    level2E: rgb(225,199,174);
+    level2F: rgb(224,200,174);
+
+    /* Level 3 */
+    level3A: rgb(224,176,166);
+    level3B: rgb(221,178,161);
+    level3C: rgb(220,179,159);
+    level3D: rgb(217,181,155);
+    level3E: rgb(213,182,153);
+    level3F: rgb(210,184,151);
+
+    /* Level 4 */
+    level4A: rgb(212,160,147);
+    level4B: rgb(209,160,143);
+    level4C: rgb(207,162,139);
+    level4D: rgb(203,164,135);
+    level4E: rgb(200,165,133);
+    level4F: rgb(196,166,130);
+
+    /* Level 5 */
+    level5A: rgb(198,141,130);
+    level5B: rgb(195,143,122);
+    level5C: rgb(191,143,120);
+    level5D: rgb(189,145,116);
+    level5E: rgb(184,148,112);
+    level5F: rgb(180,151,111);
+
+    /* Level 6 */
+    level6A: rgb(182,124,112);
+    level6B: rgb(178,126,105);
+    level6C: rgb(175,128,102);
+    level6D: rgb(172,128,99);
+    level6E: rgb(167,131,95);
+    level6F: rgb(165,133,94);
+
+    /* Level 7 */
+    level7A: rgb(163,106,95);
+    level7B: rgb(161,110,91);
+    level7C: rgb(157,111,85);
+    level7D: rgb(154,113,83);
+    level7E: rgb(149,115,78);
+    level7F: rgb(146,117,77);
+
+    /* Level 8 */
+    level8A: rgb(144,92,79);
+    level8B: rgb(141,92,75);
+    level8C: rgb(139,95,70);
+    level8D: rgb(135,96,67);
+    level8E: rgb(131,98,65);
+    level8F: rgb(128,100,61);
+
+    /* Level 9 */
+    level9A: rgb(123,75,65);
+    level9B: rgb(120,77,61);
+    level9C: rgb(117,79,56);
+    level9D: rgb(116,80,54);
+    level9E: rgb(113,82,53);
+    level9F: rgb(109,85,51);
+
+    /* Level 10 */
+    level10A: rgb(101,61,53);
+    level10B: rgb(100,62,49);
+    level10C: rgb(97,64,45);
+    level10D: rgb(93,65,43);
+    level10E: rgb(92,66,41);
+    level10F: rgb(88,69,37);
+
+    /* Level 11 */
+    level11A: rgb(78,47,42);
+    level11B: rgb(76,48,37);
+    level11C: rgb(75,49,36);
+    level11D: rgb(72,51,34);
+    level11E: rgb(70,52,32);
+    level11F: rgb(69,53,30);
+
+    /* range */
+    Bright: rgb(245,216,205);
+    Dark:   rgb(69,53,30);
 }
