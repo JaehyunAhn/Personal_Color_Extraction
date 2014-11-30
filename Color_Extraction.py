@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
     Sogang University Datamining Laboratory
     title: Personal color Extratcion
@@ -10,22 +11,29 @@ from collections import Counter
 from find_suitable_color import *
 
 # read image
-targetImage = cv2.imread('./Test_Images/YH334_face.jpg')
-
+targetImage = cv2.imread('./Test_Images/YH1_face.jpg', cv2.CV_LOAD_IMAGE_COLOR)
+print targetImage[130][95]
 skinCandidates = []
 # found color range and count it from skin color range
-for x in range(len(targetImage)):
-    for y in range(len(targetImage[x])):
-        skinColor = color_detector(targetImage[x][y])
+for x in range(45):
+    for y in range(40):
+        skinColor = color_detector(targetImage[35+x][95+y])
         if skinColor is not -1:
             skinCandidates.append(skinColor)
+        skinColor = color_detector(targetImage[130+x][95+y])
+        if skinColor is not -1:
+            skinCandidates.append(skinColor)
+
 # found a mean color
 a = Counter(skinCandidates).most_common(4)
 # print out BGR
-color1 = (skinMap[a[0][0]][2], skinMap[a[0][0]][1], skinMap[a[0][0]][0])
-color2 = (skinMap[a[1][0]][2], skinMap[a[1][0]][1], skinMap[a[1][0]][0])
-color3 = (skinMap[a[2][0]][2], skinMap[a[2][0]][1], skinMap[a[2][0]][0])
-color4 = (skinMap[a[3][0]][2], skinMap[a[3][0]][1], skinMap[a[3][0]][0])
+print a
+# 보정을 위한 추가 값
+const = 20
+color1 = (skinMap[a[0][0]][2]+const, skinMap[a[0][0]][1]+const, skinMap[a[0][0]][0]+const)
+color2 = (skinMap[a[1][0]][2]+const, skinMap[a[1][0]][1]+const, skinMap[a[1][0]][0]+const)
+color3 = (skinMap[a[2][0]][2]+const, skinMap[a[2][0]][1]+const, skinMap[a[2][0]][0]+const)
+color4 = (skinMap[a[3][0]][2]+const, skinMap[a[3][0]][1]+const, skinMap[a[3][0]][0]+const)
 colorWinodw = np.zeros((200, 200, 3), np.uint8)
 cv2.rectangle(colorWinodw, (0, 0), (99, 99), color1, -1)
 cv2.rectangle(colorWinodw, (100, 0), (199, 99), color2, -1)
