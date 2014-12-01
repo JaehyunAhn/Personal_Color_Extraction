@@ -11,7 +11,8 @@ from collections import Counter
 from find_suitable_color import *
 
 # read image
-targetImage = cv2.imread('./Test_Images/YH1_face.jpg', cv2.CV_LOAD_IMAGE_COLOR)
+imgName = 'YH5_face.jpg'
+targetImage = cv2.imread('./Test_Images/'+imgName, cv2.CV_LOAD_IMAGE_COLOR)
 print targetImage[130][95]
 skinCandidates = []
 # found color range and count it from skin color range
@@ -42,3 +43,4 @@ cv2.rectangle(colorWinodw, (100, 100), (199, 199), color4, -1)
 cv2.imshow("Image", targetImage)
 cv2.imshow("Color", colorWinodw)
 cv2.waitKey(0)
+cv2.imwrite(imgName, colorWinodw)
