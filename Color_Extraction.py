@@ -13,7 +13,6 @@ from find_suitable_color import *
 # read image
 imgName = 'YH5_face.jpg'
 targetImage = cv2.imread('./Test_Images/'+imgName, cv2.CV_LOAD_IMAGE_COLOR)
-print targetImage[130][95]
 skinCandidates = []
 # found color range and count it from skin color range
 for x in range(45):
@@ -26,11 +25,11 @@ for x in range(45):
             skinCandidates.append(skinColor)
 
 # found a mean color
-a = Counter(skinCandidates).most_common(4)
-# print out BGR
-print a
-# 보정을 위한 추가 값
-const = 20
+a = Counter(skinCandidates).most_common(8)
+# print out Weather
+find_suitable_weather(a)
+# const: 보정을 위한 추가 값
+const = 0
 color1 = (skinMap[a[0][0]][2]+const, skinMap[a[0][0]][1]+const, skinMap[a[0][0]][0]+const)
 color2 = (skinMap[a[1][0]][2]+const, skinMap[a[1][0]][1]+const, skinMap[a[1][0]][0]+const)
 color3 = (skinMap[a[2][0]][2]+const, skinMap[a[2][0]][1]+const, skinMap[a[2][0]][0]+const)
