@@ -70,4 +70,10 @@ def find_suitable_weather(inputRange):
             weather_score[3] += inputRange[i][1]
         else:
             print 'something is wrong please contact to manager'
-    print weather_score, 'Sp, Su, Au, Wt'
+    max_num = 0
+    max_idx = 0
+    for i in range(4):
+        if weather_score[i] > max_num:
+            max_num = weather_score[i]
+            max_idx = i
+    return weather_score, max_num, max_idx

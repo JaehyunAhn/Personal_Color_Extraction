@@ -11,7 +11,7 @@ from collections import Counter
 from find_suitable_color import *
 
 # read image
-imgName = 'YH5_face.jpg'
+imgName = 'YH030_face.jpg'
 targetImage = cv2.imread('./Test_Images/'+imgName, cv2.CV_LOAD_IMAGE_COLOR)
 skinCandidates = []
 # found color range and count it from skin color range
@@ -27,7 +27,18 @@ for x in range(45):
 # found a mean color
 a = Counter(skinCandidates).most_common(8)
 # print out Weather
-find_suitable_weather(a)
+wData, wNum, wName = find_suitable_weather(a)
+if wName is 0:
+    wName = 'spring'
+elif wName is 1:
+    wName = 'summer'
+elif wName is 2:
+    wName = 'autumn'
+else:
+    wName = 'winter'
+f = open('./Test_Results/Result.txt', 'a')
+f.write(str(imgName) + str(wData) + wName + '\n')
+f.close()
 # const: 보정을 위한 추가 값
 const = 0
 color1 = (skinMap[a[0][0]][2]+const, skinMap[a[0][0]][1]+const, skinMap[a[0][0]][0]+const)
@@ -39,7 +50,7 @@ cv2.rectangle(colorWinodw, (0, 0), (99, 99), color1, -1)
 cv2.rectangle(colorWinodw, (100, 0), (199, 99), color2, -1)
 cv2.rectangle(colorWinodw, (0, 100), (99, 199), color3, -1)
 cv2.rectangle(colorWinodw, (100, 100), (199, 199), color4, -1)
-cv2.imshow("Image", targetImage)
-cv2.imshow("Color", colorWinodw)
-cv2.waitKey(0)
+# cv2.imshow("Image", targetImage)
+# cv2.imshow("Color", colorWinodw)
+# cv2.waitKey(0)
 cv2.imwrite(imgName, colorWinodw)
